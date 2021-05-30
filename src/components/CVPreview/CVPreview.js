@@ -1,13 +1,13 @@
 import React from "react";
 import './CVPreview.css';
-import Header from './Header.js';
+import CVHeader from './CVHeader.js';
 
 function CVPreview(props) {
-    console.log(props)
-    const { personalForm } = props.previewMainState;
+    const { personalForm, educationForm, experienceForm } = props.previewMainState;
+    
     return (
         <div className='cvpreview'>
-            <Header personalForm={personalForm} />
+            <CVHeader personalForm={personalForm} />
         </div>
     );
 }

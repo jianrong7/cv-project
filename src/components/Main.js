@@ -28,10 +28,19 @@ class Main extends React.Component {
                 to: ''
             }
         }
+        this.setMainState = this.setMainState.bind(this);
     }
 
     setMainState(newVal) {
-        console.log(newVal);
+        if (newVal[0] === 'personalForm') {
+            this.setState({
+                personalForm: {
+                    [newVal[1]]: newVal[2],
+                    ...this.state
+                }
+                
+            })
+        }
     }
 
     render() {

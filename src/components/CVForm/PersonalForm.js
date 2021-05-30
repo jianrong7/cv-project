@@ -21,14 +21,14 @@ class PersonalForm extends React.Component {
                 ...this.state                
             }
         })
-        this.props.setMainState(this.state)
+        this.props.setMainState([e.target.parentElement.parentElement.className, e.target.name, e.target.value])
     }
 
     render() {
         const { personalForm } = this.state;
 
         return (
-            <div className="personalInformation">
+            <div className="personalForm">
                 <span>Person Information</span>
                 <form>
                     <input
