@@ -34,12 +34,15 @@ class Main extends React.Component {
     setMainState(newVal) {
         if (newVal[0] === 'personalForm') {
             this.setState({
-                personalForm: {
-                    [newVal[1]]: newVal[2],
-                    ...this.state
-                }
-                
+                personalForm: Object.assign(
+                    {},
+                    this.state.personalForm,
+                    { [newVal[1]]: newVal[2] }
+                ),
+                educationForm: this.state.educationForm,
+                experienceForm: this.state.experienceForm
             })
+            console.log(this.state)
         }
     }
 

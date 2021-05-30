@@ -1,9 +1,22 @@
 import React from "react";
 
 export default function CVHeader(props) {
-    const { name } = props.personalForm;
+    const { name, email, phoneNumber, description } = props.personalForm;
         
     return (
-        <div>{name}</div>
+        <div>
+            <div>
+                {name}
+            </div>
+            <div>
+                {email}
+            </div>
+            <div>
+                {phoneNumber}
+            </div>
+            <div>
+                {description}
+            </div>
+        </div>
     );
 }

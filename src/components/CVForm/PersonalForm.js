@@ -1,5 +1,4 @@
 import React from "react";
-import uniqid from "uniqid";
 
 class PersonalForm extends React.Component {
     constructor(props) {
@@ -15,12 +14,12 @@ class PersonalForm extends React.Component {
     }
 
     handleChange = (e) => {
-        this.setState({
-            personalForm: {
-                [e.target.name]: e.target.value,
-                ...this.state                
-            }
-        })
+        // this.setState({
+        //     personalForm: {
+        //         [e.target.name]: e.target.value,
+        //         ...this.state                
+        //     }
+        // })
         this.props.setMainState([e.target.parentElement.parentElement.className, e.target.name, e.target.value])
     }
 
