@@ -16,4 +16,20 @@ class DeleteButton extends React.Component {
     }
 }
 
-export { DeleteButton };
+class AddButton extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    handleAdd(e) {
+
+    }
+
+    render() {
+        return (
+            <button onClick={this.handleAdd}>Add</button>
+        );
+    }
+}
+
+export { DeleteButton, AddButton };

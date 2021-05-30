@@ -1,30 +1,11 @@
 import React from "react";
 
 class PersonalForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            personalForm: {
-                name: '',
-                email: '',
-                phoneNumber: '',
-                description: ''
-            }
-        }
-    }
-
     handleChange = (e) => {
-        // this.setState({
-        //     personalForm: {
-        //         [e.target.name]: e.target.value,
-        //         ...this.state                
-        //     }
-        // })
         this.props.setMainState([e.target.parentElement.parentElement.className, e.target.name, e.target.value])
     }
 
     render() {
-        const { personalForm } = this.state;
 
         return (
             <div className="personalForm">
@@ -34,7 +15,6 @@ class PersonalForm extends React.Component {
                         type="text"
                         placeholder="Name"
                         name="name"
-                        value={personalForm.value}
                         onChange={this.handleChange}
                     />
                     <br />
@@ -42,7 +22,6 @@ class PersonalForm extends React.Component {
                         type="text" 
                         placeholder="Email"
                         name="email"
-                        value={personalForm.value}
                         onChange={this.handleChange}
                     />
                     <br />
@@ -50,7 +29,6 @@ class PersonalForm extends React.Component {
                         type="text" 
                         placeholder="Phone Number"
                         name="phoneNumber"
-                        value={personalForm.value}
                         onChange={this.handleChange}
                     />
                     <br />
@@ -58,7 +36,6 @@ class PersonalForm extends React.Component {
                         rows="3"
                         placeholder="Description"
                         name="description"
-                        value={personalForm.value}
                         onChange={this.handleChange}
                     />
                     <br />

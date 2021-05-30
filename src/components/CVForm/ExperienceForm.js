@@ -1,11 +1,17 @@
 import React from "react";
+import { DeleteButton } from "./Buttons.js";
+import uniqid from 'uniqid';
 
 class ExperienceForm extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            id: uniqid()
+        }
     }
 
     render() {
+        const { id } = this.state.id;
         return (
             <div className="experience">
                 <span>Experience</span>
@@ -21,6 +27,7 @@ class ExperienceForm extends React.Component {
                     <input type="text" placeholder="To" />
                     <br />
                 </form>
+                <DeleteButton id={id} />
             </div>
         );
     }
