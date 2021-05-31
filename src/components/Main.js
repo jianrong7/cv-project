@@ -38,6 +38,8 @@ class Main extends React.Component {
         this.setMainState = this.setMainState.bind(this);
         this.addForm = this.addForm.bind(this);
         this.deleteForm = this.deleteForm.bind(this);
+        this.loadExample = this.loadExample.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     setMainState(newVal) {
@@ -133,6 +135,13 @@ class Main extends React.Component {
             })
         }
     }
+    
+    loadExample(e) {
+        this.setState(e);
+    }
+    reset(e) {
+        this.setState(e);
+    }
 
     render() {
         return (
@@ -141,8 +150,10 @@ class Main extends React.Component {
                     setMainState={this.setMainState}
                     addForm={this.addForm}
                     deleteForm={this.deleteForm}
+                    loadExample={this.loadExample}
                     experienceForms={this.state.experienceForms}
                     educationForms={this.state.educationForms}
+                    reset={this.reset}
                 />
                 <CVPreview previewMainState={this.state} />
             </div>

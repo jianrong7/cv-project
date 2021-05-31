@@ -1,5 +1,9 @@
 .cvpreview {
     width: 800px;
-    background-color: red;
+    background-color: rgb(245, 245, 245);
     margin: 10px;
+    padding: 10px;
+    font-family: MyFont;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    font-size: 23px;
 }

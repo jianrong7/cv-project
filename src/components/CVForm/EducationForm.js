@@ -4,7 +4,7 @@ import EducationFormItem from "./EducationFormItem.js";
 function EducationForm(props) {
     const { forms, setMainState, deleteForm } = props;
     return (
-        <div className="experience">
+        <div className="education">
             <span>Education</span>
             {forms.map(form => {
                 return (

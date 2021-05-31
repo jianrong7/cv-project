@@ -3,7 +3,7 @@ import './CVForm.css';
 import PersonalForm from './PersonalForm.js';
 import ExperienceForm from './ExperienceForm.js';
 import EducationForm from './EducationForm.js';
-import { AddButton } from './Buttons.js';
+import { AddButton, LoadExample, ResetButton } from './Buttons.js';
 
 
 function CVForm(props) {
@@ -14,6 +14,8 @@ function CVForm(props) {
             <AddButton form='experience' addForm={props.addForm} />
             <EducationForm setMainState={props.setMainState} forms={props.educationForms} deleteForm={props.deleteForm} />
             <AddButton form='education' addForm={props.addForm} />
+            <LoadExample loadExample={props.loadExample} />
+            <ResetButton reset={props.reset} />
         </div>
     );
 }
