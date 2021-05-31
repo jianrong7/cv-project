@@ -1,6 +1,7 @@
 import React from "react";
 import CVForm from './CVForm/CVForm.js';
 import CVPreview from './CVPreview/CVPreview.js';
+import uniqid from 'uniqid';
 import './Main.css';
 
 class Main extends React.Component {
@@ -13,20 +14,26 @@ class Main extends React.Component {
                 phoneNumber: '',
                 description: ''
             },
-            educationForm: {
-                school: '',
-                city: '',
-                degree: '',
-                from: '',
-                to: ''
-            },
-            experienceForm: {
-                position: '',
-                company: '',
-                city: '',
-                from: '',
-                to: ''
-            }
+            educationForms: [
+                {
+                    id: uniqid(),
+                    school: '',
+                    city: '',
+                    degree: '',
+                    from: '',
+                    to: ''
+                },
+            ],            
+            experienceForms: [
+                {
+                    id: uniqid(),
+                    position: '',
+                    company: '',
+                    city: '',
+                    from: '',
+                    to: ''
+                },
+            ],
         }
         this.setMainState = this.setMainState.bind(this);
     }
@@ -46,10 +53,14 @@ class Main extends React.Component {
         }
     }
 
+    addForm(e) {
+        console.log(e)
+    }
+
     render() {
         return (
             <div className="main">
-                <CVForm setMainState={this.setMainState} />
+                <CVForm setMainState={this.setMainState} addForm={this.addForm} />
                 <CVPreview previewMainState={this.state} />
             </div>
         );

@@ -10,10 +10,10 @@ function CVForm(props) {
     return (
         <div className='cvform'>
             <PersonalForm setMainState={props.setMainState} />
-            <ExperienceForm />
-            <AddButton form='experience' />
+            <ExperienceForm setMainState={props.setMainState} />
+            <AddButton form='experience' addForm={props.addForm} />
             <EducationForm />
-            <AddButton form='education' />
+            <AddButton form='education' addForm={props.addForm} />
         </div>
     );
 }

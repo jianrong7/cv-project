@@ -19,10 +19,17 @@ class DeleteButton extends React.Component {
 class AddButton extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { form: '' };
+        this.handleAdd = this.handleAdd.bind(this);
+    }
+    componentDidMount() { 
+        const formValue = this.props.form;
+        console.log(formValue)
+        this.setState({ form: formValue })
     }
 
     handleAdd(e) {
-
+        this.props.addForm(this.state)
     }
 
     render() {
