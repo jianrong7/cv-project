@@ -3,11 +3,11 @@ import './CVPreview.css';
 import CVHeader from './CVHeader.js';
 
 function CVPreview(props) {
-    const { personalForm, educationForm, experienceForm } = props.previewMainState;
+    const { personalForm, experienceForms, educationForms } = props.previewMainState;
     
     return (
         <div className='cvpreview'>
-            <CVHeader personalForm={personalForm} />
+            <CVHeader personalForm={personalForm} experienceForms={experienceForms} />
         </div>
     );
 }

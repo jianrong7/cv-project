@@ -1,7 +1,12 @@
 import React from "react";
 
 class PersonalForm extends React.Component {
-    handleChange = (e) => {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
         this.props.setMainState([e.target.parentElement.parentElement.className, e.target.name, e.target.value])
     }
 

@@ -42,15 +42,27 @@ class Main extends React.Component {
     setMainState(newVal) {
         if (newVal[0] === 'personalForm') {
             this.setState({
+                ...this.state,
                 personalForm: Object.assign(
                     {},
                     this.state.personalForm,
                     { [newVal[1]]: newVal[2] }
                 ),
-                educationForm: this.state.educationForm,
-                experienceForm: this.state.experienceForm
             })
             console.log(this.state)
+        } else if (newVal[0] === 'experienceForm') {
+            const correctID = (form) => form.id === newVal[3];
+            const formIndex = this.state.experienceForms.findIndex(correctID);
+
+            let experienceForms = [...this.state.experienceForms];
+            let experienceForm = {...experienceForms[formIndex]};
+            experienceForm[newVal[1]] = newVal[2];
+            experienceForms[formIndex] = experienceForm
+            
+            this.setState({
+                ...this.state,
+                experienceForms
+            })
         }
     }
 

@@ -3,10 +3,16 @@ import React from "react";
 class DeleteButton extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { id: '' };
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+    componentDidMount() {
+        const idValue = this.props.className;
+        this.setState({ id: idValue });
     }
 
     handleDelete() {
-        
+        console.log(this.state)
     }
 
     render() {
