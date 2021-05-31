@@ -3,16 +3,18 @@ import React from "react";
 class DeleteButton extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { id: '' };
+        this.state = { form: '', id: '' };
         this.handleDelete = this.handleDelete.bind(this);
     }
     componentDidMount() {
         const idValue = this.props.className;
-        this.setState({ id: idValue });
+        const formValue = this.props.form;
+        this.setState({ form: formValue, id: idValue });
     }
 
-    handleDelete() {
-        console.log(this.state)
+    handleDelete(e) {
+        console.log([this.state.form, this.state.id])
+        this.props.deleteForm([this.state.form, this.state.id])
     }
 
     render() {
@@ -30,7 +32,6 @@ class AddButton extends React.Component {
     }
     componentDidMount() { 
         const formValue = this.props.form;
-        console.log(formValue)
         this.setState({ form: formValue })
     }
 

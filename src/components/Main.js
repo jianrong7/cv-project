@@ -37,6 +37,7 @@ class Main extends React.Component {
         }
         this.setMainState = this.setMainState.bind(this);
         this.addForm = this.addForm.bind(this);
+        this.deleteForm = this.deleteForm.bind(this);
     }
 
     setMainState(newVal) {
@@ -62,6 +63,19 @@ class Main extends React.Component {
             this.setState({
                 ...this.state,
                 experienceForms
+            })
+        } else if (newVal[0] === 'educationForm') {
+            const correctID = (form) => form.id === newVal[3];
+            const formIndex = this.state.educationForms.findIndex(correctID);
+
+            let educationForms = [...this.state.educationForms];
+            let educationForm = {...educationForms[formIndex]};
+            educationForm[newVal[1]] = newVal[2];
+            educationForms[formIndex] = educationForm
+            
+            this.setState({
+                ...this.state,
+                educationForms
             })
         }
     }
@@ -92,7 +106,32 @@ class Main extends React.Component {
                 educationForms: [...this.state.educationForms, emptyEducation]
             })
         }
-        console.log(this.state)
+    }
+
+    deleteForm(e) {
+        if (e[0] === "experience") {
+            const correctID = (form) => form.id === e[1];
+            const formIndex = this.state.experienceForms.findIndex(correctID);
+            
+            let experienceForms = [...this.state.experienceForms];
+            experienceForms.splice(formIndex, 1)
+
+            this.setState({
+                ...this.state,
+                experienceForms
+            })
+        } else if (e[0] === "education") {
+            const correctID = (form) => form.id === e[1];
+            const formIndex = this.state.educationForms.findIndex(correctID);
+            
+            let educationForms = [...this.state.educationForms];
+            educationForms.splice(formIndex, 1)
+
+            this.setState({
+                ...this.state,
+                educationForms
+            })
+        }
     }
 
     render() {
@@ -101,8 +140,9 @@ class Main extends React.Component {
                 <CVForm
                     setMainState={this.setMainState}
                     addForm={this.addForm}
+                    deleteForm={this.deleteForm}
                     experienceForms={this.state.experienceForms}
-                    educationLength={this.state.educationForms.length}
+                    educationForms={this.state.educationForms}
                 />
                 <CVPreview previewMainState={this.state} />
             </div>

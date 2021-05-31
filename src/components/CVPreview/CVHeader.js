@@ -3,6 +3,7 @@ import React from "react";
 export default function CVHeader(props) {
     const { name, email, phoneNumber, description } = props.personalForm;
     const experienceForms = props.experienceForms;
+    const educationForms = props.educationForms;
 
     return (
         <div>
@@ -21,13 +22,25 @@ export default function CVHeader(props) {
             <div>
                 {experienceForms.map(experienceForm => {
                     return (
-                        <div>
-                            <p>{experienceForm.id}</p>
+                        <div key={experienceForm.id}>
                             <p>{experienceForm.position}</p>
                             <p>{experienceForm.company}</p>
                             <p>{experienceForm.city}</p>
                             <p>{experienceForm.from}</p>
                             <p>{experienceForm.to}</p>
+                        </div>
+                    );
+                })}
+            </div>
+            <div>
+                {educationForms.map(educationForm => {
+                    return (
+                        <div key={educationForm.id}>
+                            <p>{educationForm.school}</p>
+                            <p>{educationForm.city}</p>
+                            <p>{educationForm.degree}</p>
+                            <p>{educationForm.from}</p>
+                            <p>{educationForm.to}</p>
                         </div>
                     );
                 })}

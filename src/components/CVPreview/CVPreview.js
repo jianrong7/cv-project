@@ -7,7 +7,7 @@ function CVPreview(props) {
     
     return (
         <div className='cvpreview'>
-            <CVHeader personalForm={personalForm} experienceForms={experienceForms} />
+            <CVHeader personalForm={personalForm} experienceForms={experienceForms} educationForms={educationForms} />
         </div>
     );
 }

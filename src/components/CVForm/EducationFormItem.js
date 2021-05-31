@@ -2,15 +2,15 @@ import { render } from "@testing-library/react";
 import React from "react";
 import { DeleteButton } from "./Buttons.js";
 
-export default class ExperienceFormItem extends React.Component {
+export default class EducationFormItem extends React.Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(e) {
-        this.props.setMainState(['experienceForm', e.target.name, e.target.value, e.target.parentElement.className])
+        this.props.setMainState(['educationForm', e.target.name, e.target.value, e.target.parentElement.className])
     }
-
+    
     render() {
         const { id, deleteForm } = this.props;
         return(
@@ -18,15 +18,8 @@ export default class ExperienceFormItem extends React.Component {
                 <form className={id}>
                     <input
                         type="text"
-                        placeholder="Position"
-                        name="position"
-                        onChange={this.handleChange}
-                    />
-                    <br />
-                    <input
-                        type="text"
-                        placeholder="Company"
-                        name="company"
+                        placeholder="School"
+                        name="school"
                         onChange={this.handleChange}
                     />
                     <br />
@@ -34,6 +27,13 @@ export default class ExperienceFormItem extends React.Component {
                         type="text"
                         placeholder="City"
                         name="city"
+                        onChange={this.handleChange}
+                    />
+                    <br />
+                    <input
+                        type="text"
+                        placeholder="Degree"
+                        name="degree"
                         onChange={this.handleChange}
                     />
                     <br />
@@ -52,7 +52,7 @@ export default class ExperienceFormItem extends React.Component {
                     />
                     <br />
                 </form>
-                <DeleteButton form="experience" className={id} deleteForm={deleteForm} />
+                <DeleteButton form="education" className={id} deleteForm={deleteForm} />
             </div>
         );
     }
