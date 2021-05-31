@@ -14,16 +14,6 @@ class Main extends React.Component {
                 phoneNumber: '',
                 description: ''
             },
-            educationForms: [
-                {
-                    id: uniqid(),
-                    school: '',
-                    city: '',
-                    degree: '',
-                    from: '',
-                    to: ''
-                },
-            ],            
             experienceForms: [
                 {
                     id: uniqid(),
@@ -34,8 +24,19 @@ class Main extends React.Component {
                     to: ''
                 },
             ],
+            educationForms: [
+                {
+                    id: uniqid(),
+                    school: '',
+                    city: '',
+                    degree: '',
+                    from: '',
+                    to: ''
+                },
+            ],    
         }
         this.setMainState = this.setMainState.bind(this);
+        this.addForm = this.addForm.bind(this);
     }
 
     setMainState(newVal) {
@@ -54,13 +55,43 @@ class Main extends React.Component {
     }
 
     addForm(e) {
-        console.log(e)
+        const emptyExperience = {
+            id: uniqid(),
+            position: '',
+            company: '',
+            city: '',
+            from: '',
+            to: ''
+        };
+        const emptyEducation = {
+            id: uniqid(),
+            school: '',
+            city: '',
+            degree: '',
+            from: '',
+            to: ''
+        };
+        if (e === "experience") {
+            this.setState({
+                experienceForms: [...this.state.experienceForms, emptyExperience]
+            })
+        } else if (e === "education") {
+            this.setState({
+                educationForms: [...this.state.educationForms, emptyEducation]
+            })
+        }
+        console.log(this.state)
     }
 
     render() {
         return (
             <div className="main">
-                <CVForm setMainState={this.setMainState} addForm={this.addForm} />
+                <CVForm
+                    setMainState={this.setMainState}
+                    addForm={this.addForm}
+                    experienceForms={this.state.experienceForms}
+                    educationLength={this.state.educationForms.length}
+                />
                 <CVPreview previewMainState={this.state} />
             </div>
         );

@@ -1,33 +1,31 @@
 import React from "react";
-import { DeleteButton } from "./Buttons.js";
+import ExperienceFormItem from "./ExperienceFormItem.js";
 import uniqid from 'uniqid';
 
 class ExperienceForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: uniqid()
+            id: uniqid(),
+            number: 1
         }
+    }
+    componentDidMount() {
+        this.setState({
+            number: this.props.forms.length
+        })
     }
 
     render() {
-        const { id } = this.state.id;
+        const { forms } = this.props;
         return (
             <div className="experience">
                 <span>Experience</span>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="Position" />
-                    <br />
-                    <input type="text" placeholder="Company" />
-                    <br />
-                    <input type="text" placeholder="City" />
-                    <br />
-                    <input type="text" placeholder="From" />
-                    <br />
-                    <input type="text" placeholder="To" />
-                    <br />
-                </form>
-                <DeleteButton id={id} />
+                {forms.map(form => {
+                    return (
+                        <ExperienceFormItem id={form.id}/>
+                    );
+                })}
             </div>
         );
     }

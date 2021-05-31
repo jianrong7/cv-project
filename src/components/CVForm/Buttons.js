@@ -29,7 +29,7 @@ class AddButton extends React.Component {
     }
 
     handleAdd(e) {
-        this.props.addForm(this.state)
+        this.props.addForm(this.state.form);
     }
 
     render() {
