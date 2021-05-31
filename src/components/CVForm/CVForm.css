@@ -1,5 +1,45 @@
 .cvform {
     width: 800px;
-    background-color: green;
+    background-color: rgb(238, 238, 238);
     margin: 10px;
+    padding: 10px;
+    font-family: MyFont;
+    border-radius: 5px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    font-size: 23px;
+    text-align: center;
+}
+input {
+    font-family: MyFont;
+    width: 90%;
+    margin: 5px 0px;
+    height: 17px;
+    font-size: 18px;
+    padding: 5px;
+    border: 0px;
+}
+textarea {
+    font-family: MyFont;
+    width: 90%;
+    margin: 5px 0px;
+    font-size: 18px;
+    padding: 5px;
+    border: 0px;
+}
+textarea::placeholder {
+    font-family: MyFont;
+}
+button {
+    font-family: MyFont;
+    width: 90%;
+    background-color: rgb(48, 48, 48);
+    color:rgb(238, 238, 238);
+    border: 0px;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 18px;
+    margin: 5px 0px;
+}
+button:hover {
+    cursor: pointer;
 }
