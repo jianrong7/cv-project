@@ -170,23 +170,10 @@ class ResetButton extends React.Component {
 }
 
 class GenerateCV extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    generateCV() {
-        var content = document.querySelector(".cvpreview");
-        var pri = document.getElementById("ifmcontentstoprint").contentWindow;
-        pri.document.open();
-        pri.document.write(content.innerHTML);
-        pri.document.close();
-        pri.focus();
-        pri.print();
-    }
 
     render() {
         return (
-            <button onClick={this.generateCV} className="generateCVBtn">Generate PDF</button>
+            <button onClick={() => window.print()} className="generateCVBtn">Generate PDF</button>
         );
     }
 }

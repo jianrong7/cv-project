@@ -8,7 +8,7 @@ function CVPreview(props) {
     const { personalForm, experienceForms, educationForms } = props.previewMainState;
     
     return (
-        <div className='cvpreview'>
+        <div className='cvpreview section-to-print'>
             <div className="previewHeader">
                 <p className="previewName">{personalForm.name}</p>
                 <p className="previewContact">{personalForm.email} | {personalForm.phoneNumber}</p>
