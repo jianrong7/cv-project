@@ -10,16 +10,16 @@ function CVPreview(props) {
     return (
         <div className='cvpreview'>
             <div className="previewHeader">
-                <p>{personalForm.name}</p>
-                <p>{personalForm.email} | {personalForm.phoneNumber}</p>
-                <p>{personalForm.description}</p>
+                <p className="previewName">{personalForm.name}</p>
+                <p className="previewContact">{personalForm.email} | {personalForm.phoneNumber}</p>
+                <p className="previewDescription">{personalForm.description}</p>
             </div>
             <div className="previewExperience">
-                <p>Experience</p>
+                <p className="previewExperienceTitle">Experience</p>
                 <PreviewExperience experienceForms={experienceForms} />
             </div>
             <div className="previewEducation">
-                <p>Education</p>
+                <p className="previewEducationTitle">Education</p>
                 <PreviewEducation educationForms={educationForms} />
             </div>
 

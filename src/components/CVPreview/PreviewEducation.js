@@ -7,11 +7,10 @@ export default function PreviewEducation(props) {
         <div>
             {educationForms.map(educationForm => {
                 return (
-                    <div key={educationForm.id}>
+                    <div key={educationForm.id} className="educationItem">
+                        <p className="educationDegree">{educationForm.degree}</p>
                         <p>{educationForm.school}, {educationForm.city}</p>
-                        <p>{educationForm.degree}</p>
-                        <p>{educationForm.from}</p>
-                        <p>{educationForm.to}</p>
+                        <p className="previewDate">{educationForm.from} - {educationForm.to}</p>
                     </div>
                 );
             })}

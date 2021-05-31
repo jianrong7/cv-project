@@ -7,10 +7,10 @@ export default function PreviewExperience(props) {
         <div>
             {experienceForms.map(experienceForm => {
                 return (
-                    <div key={experienceForm.id}>
-                        <p>{experienceForm.position}</p>
+                    <div key={experienceForm.id} className="experienceItem">
+                        <p className="experiencePosition">{experienceForm.position}</p>
                         <p>{experienceForm.company}, {experienceForm.city}</p>
-                        <p>{experienceForm.from} - {experienceForm.to}</p>
+                        <p className="previewDate">{experienceForm.from} - {experienceForm.to}</p>
                     </div>
                 );
             })}

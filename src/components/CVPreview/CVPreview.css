@@ -1,9 +1,58 @@
 .cvpreview {
-    width: 800px;
+    width: 794px;
+    height: 1123px;
     background-color: rgb(245, 245, 245);
     margin: 10px;
-    padding: 10px;
+    padding: 15px;
     font-family: MyFont;
     box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-    font-size: 23px;
+    font-size: 20px;
+}
+.previewHeader p {
+    margin: 5px;
+}
+.previewName {
+    font-size: 32px;
+    color: rgb(204, 100, 31);
+}
+.previewContact {
+    font-size: 20px;
+    color: rgb(104, 104, 104);
+}
+.previewDescription {
+    font-size: 16px;
+}
+.previewExperienceTitle {
+    font-size: 25px;
+    color: rgb(204, 100, 31);
+    margin: 25px 5px 15px 5px;
+}
+.experienceItem p {
+    margin: 7px 5px;
+}
+.experienceItem {
+    margin: 15px 0px;
+}
+.experiencePosition {
+    font-weight: bold;
+    font-size: 21px;
+}
+.previewEducationTitle {
+    font-size: 25px;
+    color: rgb(204, 100, 31);
+    margin: 25px 5px 15px 5px;
+}
+.educationItem p {
+    margin: 7px 5px;
+}
+.educationItem {
+    margin: 15px 0px;
+}
+.educationDegree {
+    font-weight: bold;
+    font-size: 21px;
+}
+.previewDate {
+    font-size: 16px;
+    font-style: italic;
 }

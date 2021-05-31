@@ -55,7 +55,7 @@ class LoadExample extends React.Component {
                 name: 'John Doe',
                 email: 'johndoe@gmail.com',
                 phoneNumber: '98765432',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat sed nisi vitae lobortis. Fusce auctor est et diam pretium, nec feugiat velit tristique. Curabitur ligula ipsum, rutrum ut erat a, venenatis vehicula risus. Curabitur a semper turpis, vel varius metus. Cras vel ex elit. Proin turpis erat, iaculis ac volutpat at, elementum pellentesque elit. Aenean eleifend, felis at pellentesque malesuada, dui augue cursus nisi, sed lacinia neque justo nec sapien. Morbi egestas vel elit sit amet bibendum. Quisque vestibulum, erat in blandit euismod, ante orci condimentum quam, id dictum neque elit malesuada leo. Duis molestie est a enim varius, in vulputate neque iaculis. Praesent sit amet ipsum consequat, dictum nisl nec, lobortis est. Nullam sit amet imperdiet lorem. Sed mollis, lacus vel dapibus ultricies, purus orci venenatis lorem, sed dapibus diam elit fermentum quam. Praesent pulvinar at erat porttitor convallis. Donec sed purus turpis. Etiam faucibus, libero at tincidunt suscipit, massa tortor porttitor ex, vel sollicitudin felis felis vel sapien.'
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend, felis at pellentesque malesuada, dui augue cursus nisi, sed lacinia neque justo nec sapien. Morbi egestas vel elit sit amet bibendum. Quisque vestibulum, erat in blandit euismod, ante orci condimentum quam, id dictum neque elit malesuada leo. Duis molestie est a enim varius, in vulputate neque iaculis. Praesent sit amet ipsum consequat, dictum nisl nec, lobortis est. Nullam sit amet imperdiet lorem. Sed mollis, lacus vel dapibus ultricies, purus orci venenatis lorem, sed dapibus diam elit fermentum quam. Praesent pulvinar at erat porttitor convallis. Donec sed purus turpis. Etiam faucibus, libero at tincidunt suscipit, massa tortor porttitor ex, vel sollicitudin felis felis vel sapien.'
             },
             experienceForms: [
                 {
@@ -119,7 +119,7 @@ class LoadExample extends React.Component {
 
     render() {
         return (
-            <button onClick={this.handleExample}>Load Example</button>
+            <button onClick={this.handleExample} className="loadExampleBtn">Load Example</button>
         );
     }
 }
@@ -164,9 +164,31 @@ class ResetButton extends React.Component {
 
     render() {
         return (
-            <button onClick={this.handleReset}>Reset</button>
+            <button onClick={this.handleReset} className="resetBtn">Reset</button>
         );
     }
 }
 
-export { DeleteButton, AddButton, LoadExample, ResetButton };
+class GenerateCV extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    generateCV() {
+        var content = document.querySelector(".cvpreview");
+        var pri = document.getElementById("ifmcontentstoprint").contentWindow;
+        pri.document.open();
+        pri.document.write(content.innerHTML);
+        pri.document.close();
+        pri.focus();
+        pri.print();
+    }
+
+    render() {
+        return (
+            <button onClick={this.generateCV} className="generateCVBtn">Generate PDF</button>
+        );
+    }
+}
+
+export { DeleteButton, AddButton, LoadExample, ResetButton, GenerateCV };

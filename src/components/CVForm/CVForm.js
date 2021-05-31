@@ -3,7 +3,7 @@ import './CVForm.css';
 import PersonalForm from './PersonalForm.js';
 import ExperienceForm from './ExperienceForm.js';
 import EducationForm from './EducationForm.js';
-import { AddButton, LoadExample, ResetButton } from './Buttons.js';
+import { AddButton, LoadExample, ResetButton, GenerateCV } from './Buttons.js';
 
 
 function CVForm(props) {
@@ -16,6 +16,7 @@ function CVForm(props) {
             <AddButton form='education' addForm={props.addForm} />
             <LoadExample loadExample={props.loadExample} />
             <ResetButton reset={props.reset} />
+            <GenerateCV />
         </div>
     );
 }
