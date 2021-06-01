@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/jianrong7/cv-project/static/css/main.dc5e3942.chunk.css",
+    "main.js": "/jianrong7/cv-project/static/js/main.6e5503d9.chunk.js",
+    "main.js.map": "/jianrong7/cv-project/static/js/main.6e5503d9.chunk.js.map",
+    "runtime-main.js": "/jianrong7/cv-project/static/js/runtime-main.3b9de9c4.js",
+    "runtime-main.js.map": "/jianrong7/cv-project/static/js/runtime-main.3b9de9c4.js.map",
+    "static/js/2.1f2ed78b.chunk.js": "/jianrong7/cv-project/static/js/2.1f2ed78b.chunk.js",
+    "static/js/2.1f2ed78b.chunk.js.map": "/jianrong7/cv-project/static/js/2.1f2ed78b.chunk.js.map",
+    "index.html": "/jianrong7/cv-project/index.html",
+    "static/css/main.dc5e3942.chunk.css.map": "/jianrong7/cv-project/static/css/main.dc5e3942.chunk.css.map",
+    "static/js/2.1f2ed78b.chunk.js.LICENSE.txt": "/jianrong7/cv-project/static/js/2.1f2ed78b.chunk.js.LICENSE.txt",
+    "static/media/reset.css": "/jianrong7/cv-project/static/media/RobotoCondensed-Regular.db6d9169.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3b9de9c4.js",
+    "static/js/2.1f2ed78b.chunk.js",
+    "static/css/main.dc5e3942.chunk.css",
+    "static/js/main.6e5503d9.chunk.js"
+  ]
+}
