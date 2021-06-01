@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React from "react";
 import { DeleteButton } from "./Buttons.js";
 
@@ -12,7 +11,7 @@ export default class EducationFormItem extends React.Component {
     }
     
     render() {
-        const { id, deleteForm } = this.props;
+        const { id, deleteForm, state } = this.props;
         return(
             <div>
                 <form className={id}>
@@ -21,6 +20,7 @@ export default class EducationFormItem extends React.Component {
                         placeholder="School"
                         name="school"
                         onChange={this.handleChange}
+                        value={state.school}
                     />
                     <br />
                     <input
@@ -28,6 +28,7 @@ export default class EducationFormItem extends React.Component {
                         placeholder="City"
                         name="city"
                         onChange={this.handleChange}
+                        value={state.city}
                     />
                     <br />
                     <input
@@ -35,6 +36,7 @@ export default class EducationFormItem extends React.Component {
                         placeholder="Degree"
                         name="degree"
                         onChange={this.handleChange}
+                        value={state.degree}
                     />
                     <br />
                     <input
@@ -42,6 +44,7 @@ export default class EducationFormItem extends React.Component {
                         placeholder="From"
                         name="from"
                         onChange={this.handleChange}
+                        value={state.from}
                     />
                     <br />
                     <input
@@ -49,6 +52,7 @@ export default class EducationFormItem extends React.Component {
                         placeholder="To"
                         name="to"
                         onChange={this.handleChange}
+                        value={state.to}
                     />
                     <br />
                 </form>

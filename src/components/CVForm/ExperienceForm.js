@@ -13,6 +13,7 @@ function ExperienceForm(props) {
                         id={form.id}
                         setMainState={setMainState}
                         deleteForm={deleteForm}
+                        state={form}
                     />
                 );
             })}

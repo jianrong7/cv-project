@@ -13,6 +13,7 @@ function EducationForm(props) {
                         id={form.id}
                         setMainState={setMainState}
                         deleteForm={deleteForm}
+                        state={form}
                     />
                 )
             })}

@@ -38,13 +38,14 @@ button {
     border-radius: 5px;
     height: 30px;
     font-size: 18px;
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 button:hover {
     cursor: pointer;
 }
 .loadExampleBtn {
     background-color: rgb(173, 147, 29);
+    margin-top: 25px;
 }
 .resetBtn {
     background-color: rgb(194, 47, 47); 

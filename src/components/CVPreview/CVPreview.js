@@ -1,6 +1,5 @@
 import React from "react";
 import './CVPreview.css';
-import CVHeader from './CVHeader.js';
 import PreviewExperience from './PreviewExperience.js';
 import PreviewEducation from './PreviewEducation.js';
 
@@ -22,9 +21,6 @@ function CVPreview(props) {
                 <p className="previewEducationTitle">Education</p>
                 <PreviewEducation educationForms={educationForms} />
             </div>
-
-
-            {/* <CVHeader personalForm={personalForm} experienceForms={experienceForms} educationForms={educationForms} /> */}
         </div>
     );
 }

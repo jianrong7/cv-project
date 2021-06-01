@@ -21,6 +21,7 @@ class PersonalForm extends React.Component {
                         placeholder="Name"
                         name="name"
                         onChange={this.handleChange}
+                        value={this.props.state.personalForm.name}
                     />
                     <br />
                     <input
@@ -28,6 +29,7 @@ class PersonalForm extends React.Component {
                         placeholder="Email"
                         name="email"
                         onChange={this.handleChange}
+                        value={this.props.state.personalForm.email}
                     />
                     <br />
                     <input
@@ -35,6 +37,7 @@ class PersonalForm extends React.Component {
                         placeholder="Phone Number"
                         name="phoneNumber"
                         onChange={this.handleChange}
+                        value={this.props.state.personalForm.phoneNumber}
                     />
                     <br />
                     <textarea
@@ -42,6 +45,7 @@ class PersonalForm extends React.Component {
                         placeholder="Description"
                         name="description"
                         onChange={this.handleChange}
+                        value={this.props.state.personalForm.description}
                     />
                     <br />
                 </form>

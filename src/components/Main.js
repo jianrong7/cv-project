@@ -138,6 +138,7 @@ class Main extends React.Component {
     
     loadExample(e) {
         this.setState(e);
+        console.log(this.state)
     }
     reset(e) {
         this.setState(e);
@@ -154,6 +155,7 @@ class Main extends React.Component {
                     experienceForms={this.state.experienceForms}
                     educationForms={this.state.educationForms}
                     reset={this.reset}
+                    state={this.state}
                 />
                 <CVPreview previewMainState={this.state} />
             </div>
