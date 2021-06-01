@@ -2,7 +2,7 @@ import React from "react";
 import CVForm from './CVForm/CVForm.js';
 import CVPreview from './CVPreview/CVPreview.js';
 import uniqid from 'uniqid';
-import './Main.css';
+import './styles/Main.css';
 
 class Main extends React.Component {
     constructor(props) {

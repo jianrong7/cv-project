@@ -1,5 +1,5 @@
 import React from "react";
-import './CVPreview.css';
+import '../styles/CVPreview.css';
 import PreviewExperience from './PreviewExperience.js';
 import PreviewEducation from './PreviewEducation.js';
 

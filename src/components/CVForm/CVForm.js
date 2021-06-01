@@ -1,5 +1,5 @@
 import React from "react";
-import './CVForm.css';
+import '../styles/CVForm.css';
 import PersonalForm from './PersonalForm.js';
 import ExperienceForm from './ExperienceForm.js';
 import EducationForm from './EducationForm.js';
