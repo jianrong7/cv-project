@@ -1,181 +1,153 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import uniqid from "uniqid";
 
-class DeleteButton extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { form: '', id: '' };
-        this.handleDelete = this.handleDelete.bind(this);
-    }
-    componentDidMount() {
-        const idValue = this.props.className;
-        const formValue = this.props.form;
-        this.setState({ form: formValue, id: idValue });
+function DeleteButton(props) {
+    const [form, setForm] = useState('');
+    const [id, setId] = useState('');
+
+    useEffect(() => {
+        const idValue = props.className;
+        const formValue = props.form;
+        setForm(formValue);
+        setId(idValue);
+    }, []);
+
+    const handleDelete = (e) => {
+        props.deleteForm([form, id])
     }
 
-    handleDelete(e) {
-        console.log([this.state.form, this.state.id])
-        this.props.deleteForm([this.state.form, this.state.id])
-    }
-
-    render() {
-        return (
-            <button onClick={this.handleDelete}>Delete</button>
-        );
-    }
+    return (
+        <button onClick={handleDelete}>Delete</button>
+    );
 }
 
-class AddButton extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { form: '' };
-        this.handleAdd = this.handleAdd.bind(this);
-    }
-    componentDidMount() { 
-        const formValue = this.props.form;
-        this.setState({ form: formValue })
+function AddButton(props) {
+    const [form, setForm] = useState('');
+
+    useEffect(() => {
+        const formValue = props.form;
+        setForm(formValue)
+    }, [])
+
+    const handleAdd = (e) => {
+        props.addForm(form);
     }
 
-    handleAdd(e) {
-        this.props.addForm(this.state.form);
-    }
-
-    render() {
-        return (
-            <button onClick={this.handleAdd}>Add</button>
-        );
-    }
+    return (
+        <button onClick={handleAdd}>Add</button>
+    );
 }
 
-class LoadExample extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            personalForm: {
-                name: 'John Doe',
-                email: 'johndoe@gmail.com',
-                phoneNumber: '98765432',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend, felis at pellentesque malesuada, dui augue cursus nisi, sed lacinia neque justo nec sapien. Morbi egestas vel elit sit amet bibendum. Quisque vestibulum, erat in blandit euismod, ante orci condimentum quam, id dictum neque elit malesuada leo. Duis molestie est a enim varius, in vulputate neque iaculis. Praesent sit amet ipsum consequat, dictum nisl nec, lobortis est. Nullam sit amet imperdiet lorem. Sed mollis, lacus vel dapibus ultricies, purus orci venenatis lorem, sed dapibus diam elit fermentum quam. Praesent pulvinar at erat porttitor convallis. Donec sed purus turpis. Etiam faucibus, libero at tincidunt suscipit, massa tortor porttitor ex, vel sollicitudin felis felis vel sapien.'
-            },
-            experienceForms: [
-                {
-                    id: uniqid(),
-                    position: 'Full Stack Engineer Intern',
-                    company: 'ABC Company',
-                    city: 'DEF Country',
-                    from: 'Nov 2001',
-                    to: 'May 2002'
-                },
-                {
-                    id: uniqid(),
-                    position: 'Full Stack Engineer Intern',
-                    company: 'GHI Company',
-                    city: 'JKL Country',
-                    from: 'May 2002',
-                    to: 'Dec 2002'
-                },
-                {
-                    id: uniqid(),
-                    position: 'Junior Full Stack Engineer',
-                    company: 'MNO Company',
-                    city: 'PQR Country',
-                    from: 'Dec 2002',
-                    to: 'Dec 2005'
-                },
-                {
-                    id: uniqid(),
-                    position: 'Full Stack Engineer',
-                    company: 'STU Company',
-                    city: 'WXY Country',
-                    from: 'Dec 2005',
-                    to: 'Jan 2010'
-                },
-            ],
-            educationForms: [
-                {
-                    id: uniqid(),
-                    school: 'National University of ABC',
-                    city: 'DEF',
-                    degree: 'Bachelor of Computer Science',
-                    from: 'Aug 1998',
-                    to: 'Aug 2002'
-                },
-                {
-                    id: uniqid(),
-                    school: 'GHI University',
-                    city: 'JKL',
-                    degree: 'Masters in Computer Science',
-                    from: 'Aug 2010',
-                    to: 'Aug 2013'
-                },
-            ],    
-        }
-        this.handleExample = this.handleExample.bind(this);
-    }
+function LoadExample(props) {
+    const [personalForm, setPersonalForm] = useState({
+        name: 'John Doe',
+        email: 'johndoe@gmail.com',
+        phoneNumber: '98765432',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend, felis at pellentesque malesuada, dui augue cursus nisi, sed lacinia neque justo nec sapien. Morbi egestas vel elit sit amet bibendum. Quisque vestibulum, erat in blandit euismod, ante orci condimentum quam, id dictum neque elit malesuada leo. Duis molestie est a enim varius, in vulputate neque iaculis. Praesent sit amet ipsum consequat, dictum nisl nec, lobortis est. Nullam sit amet imperdiet lorem. Sed mollis, lacus vel dapibus ultricies, purus orci venenatis lorem, sed dapibus diam elit fermentum quam. Praesent pulvinar at erat porttitor convallis. Donec sed purus turpis. Etiam faucibus, libero at tincidunt suscipit, massa tortor porttitor ex, vel sollicitudin felis felis vel sapien.'
+    });
+    const [experienceForms, setExperienceForms] = useState([
+        {
+            id: uniqid(),
+            position: 'Full Stack Engineer Intern',
+            company: 'ABC Company',
+            city: 'DEF Country',
+            from: 'Nov 2001',
+            to: 'May 2002'
+        },
+        {
+            id: uniqid(),
+            position: 'Full Stack Engineer Intern',
+            company: 'GHI Company',
+            city: 'JKL Country',
+            from: 'May 2002',
+            to: 'Dec 2002'
+        },
+        {
+            id: uniqid(),
+            position: 'Junior Full Stack Engineer',
+            company: 'MNO Company',
+            city: 'PQR Country',
+            from: 'Dec 2002',
+            to: 'Dec 2005'
+        },
+        {
+            id: uniqid(),
+            position: 'Full Stack Engineer',
+            company: 'STU Company',
+            city: 'WXY Country',
+            from: 'Dec 2005',
+            to: 'Jan 2010'
+        },
+    ]);
+    const [educationForms, setEducationForms] = useState([
+        {
+            id: uniqid(),
+            school: 'National University of ABC',
+            city: 'DEF',
+            degree: 'Bachelor of Computer Science',
+            from: 'Aug 1998',
+            to: 'Aug 2002'
+        },
+        {
+            id: uniqid(),
+            school: 'GHI University',
+            city: 'JKL',
+            degree: 'Masters in Computer Science',
+            from: 'Aug 2010',
+            to: 'Aug 2013'
+        },
+    ])
 
-    handleExample() {
-        this.props.loadExample(this.state)
+    const handleExample = () => {
+        props.loadExample({personalForm, experienceForms, educationForms})
     }    
 
-    render() {
-        return (
-            <button onClick={this.handleExample} className="loadExampleBtn">Load Example</button>
-        );
-    }
+    return (
+        <button onClick={handleExample} className="loadExampleBtn">Load Example</button>
+    );
 }
 
-class ResetButton extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            personalForm: {
-                name: '',
-                email: '',
-                phoneNumber: '',
-                description: ''
-            },
-            experienceForms: [
-                {
-                    id: uniqid(),
-                    position: '',
-                    company: '',
-                    city: '',
-                    from: '',
-                    to: ''
-                },
-            ],
-            educationForms: [
-                {
-                    id: uniqid(),
-                    school: '',
-                    city: '',
-                    degree: '',
-                    from: '',
-                    to: ''
-                },
-            ],    
-        }
-        this.handleReset = this.handleReset.bind(this);
+function ResetButton(props) {
+    const [personalForm, setPersonalForm] = useState({
+        name: '',
+        email: '',
+        phoneNumber: '',
+        description: ''
+    });
+    const [experienceForms, setExperienceForms] = useState([
+        {
+            id: uniqid(),
+            position: '',
+            company: '',
+            city: '',
+            from: '',
+            to: ''
+        },
+    ]);
+    const [educationForms, setEducationForms] = useState([
+        {
+            id: uniqid(),
+            school: '',
+            city: '',
+            degree: '',
+            from: '',
+            to: ''
+        },
+    ])
+
+    const handleReset = () => {
+        props.reset({personalForm, experienceForms, educationForms})
     }
 
-    handleReset() {
-        this.props.reset(this.state)
-    }
-
-    render() {
-        return (
-            <button onClick={this.handleReset} className="resetBtn">Reset</button>
-        );
-    }
+    return (
+        <button onClick={handleReset} className="resetBtn">Reset</button>
+    );
 }
 
-class GenerateCV extends React.Component {
-
-    render() {
-        return (
-            <button onClick={() => window.print()} className="generateCVBtn">Generate PDF</button>
-        );
-    }
+function GenerateCV() {
+    return (
+        <button onClick={() => window.print()} className="generateCVBtn">Generate PDF</button>
+    );
 }
 
 export { DeleteButton, AddButton, LoadExample, ResetButton, GenerateCV };

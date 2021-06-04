@@ -1,64 +1,58 @@
 import React from "react";
 import { DeleteButton } from "./Buttons.js";
 
-export default class ExperienceFormItem extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-    }
-    handleChange(e) {
-        this.props.setMainState(['experienceForm', e.target.name, e.target.value, e.target.parentElement.className])
+export default function ExperienceFormItem(props) {
+    const handleChange = (e) => {
+        props.setMainState(['experienceForm', e.target.name, e.target.value, e.target.parentElement.className])
     }
 
-    render() {
-        const { id, deleteForm, state } = this.props;
-        return(
-            <div>
-                <form className={id}>
-                    <input
-                        type="text"
-                        placeholder="Position"
-                        name="position"
-                        onChange={this.handleChange}
-                        value={state.position}
-                    />
-                    <br />
-                    <input
-                        type="text"
-                        placeholder="Company"
-                        name="company"
-                        onChange={this.handleChange}
-                        value={state.company}
-                    />
-                    <br />
-                    <input
-                        type="text"
-                        placeholder="City"
-                        name="city"
-                        onChange={this.handleChange}
-                        value={state.city}
-                    />
-                    <br />
-                    <input
-                        type="text"
-                        placeholder="From"
-                        name="from"
-                        onChange={this.handleChange}
-                        value={state.from}
-                    />
-                    <br />
-                    <input
-                        type="text"
-                        placeholder="To"
-                        name="to"
-                        onChange={this.handleChange}
-                        value={state.to}
-                    />
-                    <br />
-                </form>
-                <DeleteButton form="experience" className={id} deleteForm={deleteForm} />
-            </div>
-        );
-    }
+    const { id, deleteForm, state } = props;
+    return(
+        <div>
+            <form className={id}>
+                <input
+                    type="text"
+                    placeholder="Position"
+                    name="position"
+                    onChange={handleChange}
+                    value={state.position}
+                />
+                <br />
+                <input
+                    type="text"
+                    placeholder="Company"
+                    name="company"
+                    onChange={handleChange}
+                    value={state.company}
+                />
+                <br />
+                <input
+                    type="text"
+                    placeholder="City"
+                    name="city"
+                    onChange={handleChange}
+                    value={state.city}
+                />
+                <br />
+                <input
+                    type="text"
+                    placeholder="From"
+                    name="from"
+                    onChange={handleChange}
+                    value={state.from}
+                />
+                <br />
+                <input
+                    type="text"
+                    placeholder="To"
+                    name="to"
+                    onChange={handleChange}
+                    value={state.to}
+                />
+                <br />
+            </form>
+            <DeleteButton form="experience" className={id} deleteForm={deleteForm} />
+        </div>
+    );
 
 }

@@ -4,7 +4,7 @@ import PreviewExperience from './PreviewExperience.js';
 import PreviewEducation from './PreviewEducation.js';
 
 function CVPreview(props) {
-    const { personalForm, experienceForms, educationForms } = props.previewMainState;
+    const { personalForm, experienceForms, educationForms } = props;
     
     return (
         <div className='cvpreview section-to-print'>

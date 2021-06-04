@@ -9,7 +9,7 @@ import { AddButton, LoadExample, ResetButton, GenerateCV } from './Buttons.js';
 function CVForm(props) {
     return (
         <div className='cvform'>
-            <PersonalForm setMainState={props.setMainState} state={props.state} />
+            <PersonalForm setMainState={props.setMainState} personalForm={props.personalForm} />
             <ExperienceForm setMainState={props.setMainState} forms={props.experienceForms} deleteForm={props.deleteForm} />
             <AddButton form='experience' addForm={props.addForm} />
             <EducationForm setMainState={props.setMainState} forms={props.educationForms} deleteForm={props.deleteForm} state={props.state} />
